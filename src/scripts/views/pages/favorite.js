@@ -1,3 +1,6 @@
+import RestoDbSource from "../../data/resto-idb";
+import { createRestoItemTemplate } from "../templates/templates-creator";
+
 const Favorite = {
     async render() {
         return `
@@ -11,7 +14,11 @@ const Favorite = {
     },
 
     async afterRender() {
-
+        const restos = await RestoDbSource.favoriteRestos();
+        const restosContainer = document.querySelector('#restos');
+        restos.forEach((resto) => {
+            restosContainer.innerHTML += createRestoItemTemplate(resto);
+        });
     },
 };
 

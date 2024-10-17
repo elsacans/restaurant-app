@@ -1,3 +1,6 @@
+import RestoDbSource from "../../data/resto-idb";
+import { createRestoItemTemplate } from "../templates/templates-creator";
+
 const Home = {
     async render() {
         return `
@@ -15,14 +18,17 @@ const Home = {
                 <h1 class= "headline_title">Explore The Restaurant</h1>
             </div>
             <section id="restaurant-list" class="restaurant-list">
-                <!-- Daftar restoran disi oleh Javascript -->
             </section>
             </main>
         `;
     },
 
     async afterRender() {
-
+        const restos = await RestoDbSource.homeRestos();
+        const restosContainer = document.querySelector('#restos');
+        restos.forEach ((resto) => {
+            restosContainer.innerHTML += createRestoItemTemplate(resto);
+        });
     },
 };
 
