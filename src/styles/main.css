@@ -182,7 +182,7 @@ body {
 }
 
 .resto-item_name a {
-  display: flex;
+  display: block;
   margin-left: 20px;
   font-size: 25px;
   text-align: left;
@@ -190,9 +190,9 @@ body {
   text-decoration: none;
 }
 .resto-item_header_rating {
-  display: inline;
-  
-  margin-right: 20px;
+  display: inline-block;
+  padding: 10px;
+  margin-left: 20px;
   font-size: 20px;
   text-align: right;
 }
@@ -205,7 +205,7 @@ body {
   display: block;
   padding: 30px;  
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .resto-item_name:hover {
