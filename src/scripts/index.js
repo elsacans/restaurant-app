@@ -7,7 +7,7 @@ import App from './views/app.js';
 
 const app = new App({
     button: document.querySelector('#menu'),
-    drawer: document.querySelector('#navigationDrawer'),
+    drawer: document.querySelector('#drawer'),
     content: document.querySelector('#main-content'),
 });
 
