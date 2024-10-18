@@ -24,17 +24,22 @@ const createRestoDetailTemplate = (resto) => `
 
 const createRestoItemTemplate = (resto) => `
 <div class="resto-item">
-<div class="resto-item_header">
-<img class="resto-item_header_poster" alt="${resto.title}"
-    src="${resto.backdrop_path ? CONFIG.BASE_IMAGE_URL + resto.backdrop_path : 'https://restaurant-api.dicoding.dev/images/medium/<pictureId>'}">
-<div class="resto-item_header_rating"> 
-    <p>⭐️<span class="resto-item_header_rating_score">${resto.rating}</span></p>
-</div>
-</div>
-<div class="resto-item_content">
-<h3><a href="/#/detail/${resto.id}">${resto.title}</a></h3>
-<p>${resto.overview}</p>
-</div>
+    <div class="resto-item_header">
+    <img class="resto-item_header_poster" alt="${resto.name}"
+        src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL + resto.pictureId : 'https://restaurant-api.dicoding.dev/images/small/${resto.pictureId}'}">
+    </div>
+    <div class="resto-item_name">
+        <h2><a href="/#/detail/${resto.name}">${resto.name}</a></h2>
+    </div>
+    <div class="resto-item_header_rating"> 
+        <p>⭐️<span class="resto-item_header_rating_score">${resto.rating}</span></p>
+    </div>
+    <div class="resto-item_city">
+        <h3>${resto.city}</h3>
+    </div>
+    <div class="resto-item_description">
+        <p>${resto.description}</p>
+    </div>
 </div>
 `;
 

@@ -2,16 +2,17 @@
 import API_ENDPOINT from "../globals/api.endpoint";
 
 class RestoDbSource {
-    static async homeRestos() {
+    static async homeResto() {
         const response = await fetch(API_ENDPOINT.HOME);
         const responseJson = await response.json();
-        return responseJson.results;
+        return responseJson.restaurants;
+        //console.log(responseJson);
     }
 
-    static async favoriteRestos() {
+    static async favoriteResto() {
         const response = await fetch(API_ENDPOINT.FAVORITE);
         const responseJson = await response.json();
-        return responseJson.results;
+        return responseJson.restaurants;
     }
 
     static async detailResto() {

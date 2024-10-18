@@ -14,10 +14,10 @@ const Favorite = {
     },
 
     async afterRender() {
-        const restos = await RestoDbSource.favoriteRestos();
-        const restosContainer = document.querySelector('#restos');
-        restos.forEach((resto) => {
-            restosContainer.innerHTML += createRestoItemTemplate(resto);
+        const resto = await RestoDbSource.favoriteResto();
+        const restoContainer = document.querySelector('#restaurant-favorite');
+        resto.forEach((resto) => {
+            restoContainer.innerHTML += createRestoItemTemplate(resto);
         });
     },
 };

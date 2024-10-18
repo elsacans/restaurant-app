@@ -6,9 +6,9 @@ import '../styles/responsive.css';
 import App from './views/app.js';
 
 const app = new App({
-    button: document.querySelector('#hamburgerButton'),
+    button: document.querySelector('#menu'),
     drawer: document.querySelector('#navigationDrawer'),
-    content: document.querySelector('#mainContent'),
+    content: document.querySelector('#main-content'),
 });
 
 window.addEventListener('hashchange', () => {
