@@ -4,6 +4,7 @@ import '../styles/main.css';
 import '../styles/responsive.css';
 /*import '../public/data/restaurant-apps.js';*/
 import App from './views/app.js';
+import swRegister from './utils/sw-register.js';
 
 const app = new App({
     button: document.querySelector('#menu'),
@@ -17,4 +18,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
     app.renderPage();
+    swRegister();
 });

@@ -14,14 +14,14 @@ body,html {
 body {
   font-family: "Kanit", sans-serif;
   font-size: 12px;
-  background-color: #F4D9D0;
+  background-color: #FCC8D1;
 }
 .skip-link {
   position: absolute;
   top: -40px;
   left: 0;
   background-color: #000;
-  color: #fff;
+  color: white;
   padding: 8px;
   z-index: 100;
 }
@@ -34,7 +34,7 @@ body {
   display: flex;
   min-height: 56px;
   transition: min-height 0.3s;
-  background-color: #C75B7A;
+  background-color: #D14D72;
 }
 
 .header_inner {
@@ -102,15 +102,15 @@ body {
 }
 
 .nav a:hover {
-  background-color: #921A40;
-  color: #F4D9D0;
+  background-color:#FFABAB;
+  color: #FEF2F4;
 }
 
 /**** Jumbotron ****/
 .hero {
   display: flex;
   align-items: center;
-  min-height: 31.25em;
+  min-height: 500px;
   width: 100%;
   text-align: center;
   background-image: url('../public/images/heros/hero-image_2.jpg');
@@ -120,7 +120,7 @@ body {
 
 .hero_inner {
   margin: 0 auto;
-  max-width: 62.5em;
+  max-width: 1000px;
 }
 
 .hero_title {
@@ -151,73 +151,78 @@ body {
 .headline_title {
   font-size: 3.5em;
   font-weight: 600;
-  color: #921A40;
+  color: #D14D72;
 }
 
 .headline_title::after {
   content: '';
   margin-top: 1em;
   display: block;
-  border-bottom: 1px solid #D9ABAB;
+  border-bottom: 5px solid #FEF2F4;
 }
 
 .restaurant-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 16px;
+  
 }
 
 .resto-item {
+  position: relative;
   padding: 0 auto;
   margin: 32px auto;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
   overflow: hidden;
-  color: #921A40;
+  background-color: #FEF2F4;
 }
 
 .resto-item_header_poster {
   width: 100%;
   height: 250px;
+  position: relative;
 }
 
 .resto-item_name a {
   display: block;
   margin-left: 20px;
-  font-size: 25px;
+  font-size: 30px;
   text-align: left;
-  color: #921A40;
-  text-decoration: none;
+  color: #D14D72;
+  text-decoration:solid;
 }
 .resto-item_header_rating {
-  position:relative;
+  position:absolute;
   padding: 8px;
-  bottom: 15px;
+  top: 15px;
   left: 20px;
   display: inline-block;
   font-size: 20px;
-  color:#921A40
+  background-color: #000;
+  color:#fff
 }
 
 .resto-item_city {
   font-size: 20px;
   margin-left: 20px;
+  color:  #FFABAB;
 }
 .resto-item_description {
   display: block;
-  padding: 30px;  
+  padding: 20px;  
   font-size: 16px;
   font-weight: 400;
 }
 
 .resto-item_name:hover {
-  color:#C75B7A;
+  color:#FCC8D1;
   opacity: 0.5;
 }
 
 /**** Footer ****/
 .footer {
-  background-color: #921A40;
+  background-color: #D14D72;
   padding: 2em;
   width: 100%;
   text-align: center;
