@@ -206,7 +206,7 @@ body {
 .resto-item_city {
   font-size: 20px;
   margin-left: 20px;
-  color:  #FFABAB;
+  color:  #D14D72;
 }
 .resto-item_description {
   display: block;
@@ -220,6 +220,18 @@ body {
   opacity: 0.5;
 }
 
+.restaurant-detail {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+.restaurant-header {
+  font-size: 30px;
+}
 /**** Footer ****/
 .footer {
   background-color: #D14D72;

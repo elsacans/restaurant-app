@@ -1,4 +1,5 @@
 import RestoDbSource from "../../data/resto-idb";
+import CONFIG from "../../globals/config";
 
 const Detail = {
     async render() {
@@ -15,14 +16,14 @@ const Detail = {
       const likeButton = document.getElementById('likeButton');
       const heartIcon = likeButton.querySelector('.heart-icon');
   
-      const restaurant = await RestoDbSource.getResto(id);
+      const restaurant = await RestoDbSource.detailResto(id);
       if (restaurant) {
         heartIcon.classList.remove('ri-heart-line');
         heartIcon.classList.add('ri-heart-fill');
       }
   
       likeButton.addEventListener('click', async () => {
-        const restaurant = await RestoDbSource.getResto(id);
+        const restaurant = await RestoDbSource.detailResto(id);
         if (!restaurant) {
           const restaurantDetail = await this.getRestaurantDetail(id);
           await RestoDbSource.putResto(restaurantDetail);
@@ -92,7 +93,6 @@ const Detail = {
         const response = await fetch(`https://restaurant-api.dicoding.dev/detail/${restaurantId}`);
         const data = await response.json();
         const { restaurant } = data;
-        const imageUrl = restaurant.pictureId ? `https://restaurant-api.dicoding.dev/images/medium/${restaurant.pictureId}` : 'https://via.placeholder.com/600x400?text=No+Image+Available';
   
         return {
           id: restaurant.id,
@@ -111,13 +111,11 @@ const Detail = {
               <div class="restaurant-header">
                 <h2>${restaurant.name}</h2>
               <div class="rating">
-                <svg class="star-icon" style="width:24px; height:24px; fill:#e07400;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z"></path>
-                </svg>
-                <p>${restaurant.rating}</p>
+                <p>⭐️<span class = "restaurant_rating">${restaurant.rating}</span></p>
               </div>
             </div>
-            <img class="lazyload" id="restaurant-image" data-src="${imageUrl}" alt="${restaurant.name}">
+            <img class="restaurant-image" alt = "${restaurant.name}"
+              src=""${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.pictureId : 'https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}'}">
             <div class="detail-info">
               <p class="description">${restaurant.description}</p>
               <p class="city">City: ${restaurant.city}</p>
