@@ -49,17 +49,17 @@ module.exports = {
       swDest: './sw.bundle.js',
       runtimeCaching: [
         {
-          urlPattern: ({url}) => url.href.startsWith('https://restaurant-api.dicoding.dev'),
+          urlPattern: ({ url }) => url.href.startsWith('https://api.themoviedb.org/3/'),
           handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: 'resto-idb-api',
+            cacheName: 'themoviedb-api',
           },
         },
         {
-          urlPattern: ({url}) =>url.href.startsWith('https://restaurant-api.dicoding.dev/images/medium/'),
+          urlPattern: ({ url }) => url.href.startsWith('https://image.tmdb.org/t/p/w500/'),
           handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: 'resto-idb-image-api',
+            cacheName: 'themoviedb-image-api',
           },
         },
       ],
