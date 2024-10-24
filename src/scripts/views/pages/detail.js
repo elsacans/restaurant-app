@@ -100,59 +100,56 @@ const Detail = {
     const reviewForm = document.getElementById('reviewForm');
     reviewForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const name = document.getElementById('reviewName').value;
-      const review = document.getElementById('reviewText').value;
+      
+      const nameInput = document.getElementById('reviewName');
+      const reviewInput = document.getElementById('reviewText');
+      const name = nameInput.value;
+      const review = reviewInput.value;
 
       try {
-        const response = await this._postReview(restaurantId, name, review);
-        if (response.error === false) {
-          // Review posted successfully
-          this._addNewReviewToDOM(response.customerReviews);
-          reviewForm.reset(); // Clear the form
+        const response = await fetch(`${CONFIG.BASE_URL}/review`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id: restaurantId,
+            name,
+            review,
+          }),
+        });
+
+        const responseJson = await response.json();
+
+        if (responseJson.error === false) {
+          // Show success alert
+          alert('Thank you! Your review has been successfully added.');
+          
+          // Update the reviews section with the new review
+          this._updateReviews(responseJson.customerReviews);
+          
+          // Clear the form
+          nameInput.value = '';
+          reviewInput.value = '';
         } else {
-          console.error('Error posting review:', response.message);
+          alert('Failed to add review. Please try again.');
         }
       } catch (error) {
         console.error('Error posting review:', error);
+        alert('Failed to add review. Please check your connection and try again.');
       }
     });
   },
 
-  async _postReview(id, name, review) {
-    const url = `${CONFIG.BASE_URL}/review`;
-    const data = {
-      id,
-      name,
-      review,
-    };
-
-    try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-      return await response.json();
-    } catch (error) {
-      console.error('Error posting review:', error);
-      throw error;
-    }
-  },
-
-  _addNewReviewToDOM(customerReviews) {
+  _updateReviews(customerReviews) {
     const reviewsContainer = document.querySelector('.restaurant-reviews ul');
-    reviewsContainer.innerHTML = '';
-    customerReviews.forEach((review) => {
-      reviewsContainer.innerHTML += `
-        <li>
-          <p class="review-name">${review.name}</p>
-          <p class="review-date">${review.date}</p>
-          <p class="review-content">${review.content}</p>
-        </li>
-        `;
-    });
+    reviewsContainer.innerHTML = customerReviews.map((review) => `
+      <li>
+        <p class="review-name">${review.name}</p>
+        <p class="review-date">${review.date}</p>
+        <p class="review-text">${review.review}</p>
+      </li>
+    `).join('');
   },
 
   _hideLoading() {
