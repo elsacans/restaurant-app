@@ -185,7 +185,9 @@ body {
 }
 
 .resto-item_name a {
-  display: block;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-block;
   margin-left: 20px;
   font-size: 30px;
   text-align: left;
@@ -351,12 +353,16 @@ body {
 
 /* Like Button Styles */
 #likeButtonContainer {
+  min-width: 44px;
+  min-height: 44px;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .like {
+  min-width: 44px;
+  min-height: 44px;
   background-color: #D14D72;
   color: white;
   border: none;
@@ -423,6 +429,8 @@ body {
 }
 
 .resto-item_name a {
+  min-width: 44px;
+  min-height: 44px;
   color: #D14D72;
   text-decoration: none;
   font-size: 1.2em;
@@ -498,6 +506,8 @@ body {
 }
 
 #reviewForm button {
+  min-width: 44px;
+  min-height: 44px;
   background-color: #D14D72;
   color: white;
   border: none;
