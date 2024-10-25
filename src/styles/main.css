@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body,html {
+body, html {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -13,9 +13,10 @@ body,html {
 
 body {
   font-family: "Kanit", sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   background-color: #FCC8D1;
 }
+
 .skip-link {
   position: absolute;
   top: -40px;
@@ -29,16 +30,17 @@ body {
 .skip-link:focus {
   top: 0;
 }
-/**** Header ****/
+
+/* Header */
 .header {
   display: flex;
+  width: 100%;
   min-height: 56px;
-  transition: min-height 0.3s;
   background-color: #D14D72;
 }
 
 .header_inner {
-  display: flex;
+  display: grid;
   align-items: center;
   width: 100%;
   text-align: left;
@@ -49,8 +51,7 @@ body {
 .header_title {
   font-weight: 700;
   font-size: 4em;
-  margin: 0.5em 0.5em;
-  display: inline-block;
+  margin: 0.5em;
   color: #fff;
 }
 
@@ -58,18 +59,15 @@ body {
   font-size: 3em;
   margin: 0;
   padding: 0;
-  
   min-width: 44px;
   min-height: 44px;
   color: #fff;
-  text-decoration: none;
+  background-color: #D14D72;
+  border: none;
+  cursor: pointer;
 }
 
-#menu {
-  display: none;
-}
-
-/**** Navbar ****/
+/* Navigation */
 .nav {
   width: 100%;
   text-align: right;
@@ -79,14 +77,13 @@ body {
 .nav_list {
   width: 100%;
   padding-left: 0;
-  justify-content: center;
   gap: 2rem 1rem;
 }
 
 .nav_item {
   box-sizing: border-box;
   display: inline-block;
-  text-align: center;
+  text-align: right;
   text-transform: uppercase;
 }
 
@@ -102,11 +99,11 @@ body {
 }
 
 .nav a:hover {
-  background-color:#FFABAB;
+  background-color: #FFABAB;
   color: #FEF2F4;
 }
 
-/**** Jumbotron ****/
+/* Hero */
 .hero {
   display: flex;
   align-items: center;
@@ -130,13 +127,12 @@ body {
 }
 
 .hero_tagline {
-  color:#fff;
-  /*margin-top: 1em;*/
+  color: #fff;
   font-size: 32px;
   font-weight: 500;
 }
 
-/**** main ****/
+/* Main Content */
 #main-content {
   width: 100%;
 }
@@ -160,11 +156,11 @@ body {
   border-bottom: 5px solid #FEF2F4;
 }
 
+/* Restaurant List */
 .restaurant-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 16px;
-  
 }
 
 .resto-item {
@@ -570,9 +566,7 @@ footer {
   background-color: #D14D72;
   padding: 2em;
   width: 100%;
-  
   margin: 0 auto;
-  padding: 1.3em;
   flex-shrink: 0;
 }
 

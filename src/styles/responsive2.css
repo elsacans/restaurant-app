@@ -1,0 +1,143 @@
+/* Base styles (for mobile devices) */
+body {
+    font-family: "Kanit", sans-serif;
+    font-size: 16px;
+    background-color: #FCC8D1;
+  }
+  
+  .header {
+    width: 100%;
+    background-color: #D14D72;
+  }
+  
+  .hero {
+    width: 100%;
+  }
+  
+  /* Small devices (phones, 320px and up) */
+  @media screen and (min-width: 320px) {
+    .header {
+      font-size: 10px;
+    }
+  
+    .hero_title {
+      font-size: 40px;
+    }
+  
+    .hero_tagline {
+      font-size: 16px;
+    }
+  
+    #menu {
+      display: block;
+      margin-right: 20px;
+      margin-bottom: 40px;
+      width: 44px;
+      height: 44px;
+    }
+  
+    .nav {
+      width: 250px;
+      position: absolute;
+      transform: translate(-300px, 0);
+      background-color: transparent;
+    }
+  
+    .open {
+      transform: translate(0, 0);
+    }
+
+    .headline_title {
+      font-size: 30px;
+    }
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media screen and (min-width: 768px) {
+    .header {
+      font-size: 14px;
+    }
+  
+    .hero_title {
+      font-size: 60px;
+    }
+  
+    .hero_tagline {
+      font-size: 24px;
+    }
+  
+    #menu {
+      display: none;
+    }
+  
+    .nav {
+      position: static;
+      width: auto;
+      transform: none;
+    }
+  
+    .nav_item {
+      display: inline-block;
+      border-bottom: none;
+    }
+
+    .header_title {
+      font-size: 2em;
+    }
+  
+    .nav {
+      text-align: center;
+    }
+  
+    .nav_item {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .hero_title {
+      font-size: 50px;
+    }
+  
+    .hero_tagline {
+      font-size: 24px;
+    }
+  
+    .headline_title {
+      font-size: 2.5em;
+    }
+  
+    .resto-item_name h2 a {
+      font-size: 28px;
+    }
+  }
+  
+  /* Large devices (desktops, 1024px and up) */
+  @media screen and (min-width: 1024px) {
+    .header {
+      font-size: 16px;
+    }
+  
+    .hero_title {
+      font-size: 80px;
+    }
+  
+    .hero_tagline {
+      font-size: 32px;
+    }
+  
+    .content {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media screen and (min-width: 1200px) {
+    .hero_title {
+      font-size: 100px;
+    }
+  
+    .content {
+      max-width: 1200px;
+    }
+  }
