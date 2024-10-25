@@ -126,19 +126,18 @@ body {
 .hero_title {
   color: #fff;
   font-weight: 700;
-  font-size: 7.5em;
+  font-size: 100px;
 }
 
 .hero_tagline {
   color:#fff;
   /*margin-top: 1em;*/
-  font-size: 2em;
+  font-size: 32px;
   font-weight: 500;
 }
 
 /**** main ****/
 #main-content {
-  display: grid;
   width: 100%;
 }
 
@@ -184,12 +183,12 @@ body {
   position: relative;
 }
 
-.resto-item_name a {
+.resto-item_name h2 a {
   min-width: 44px;
   min-height: 44px;
   display: inline-block;
-  margin-left: 20px;
-  font-size: 30px;
+  margin-inline: 20px;
+  font-size: 35px;
   text-align: left;
   color: #D14D72;
   text-decoration:solid;
@@ -384,7 +383,7 @@ body {
 
 /* Favorite Restaurants Styling */
 .content__heading {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
   margin: 1em 0;
   color: #D14D72;
