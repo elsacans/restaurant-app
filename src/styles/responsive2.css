@@ -31,16 +31,26 @@ body {
     #menu {
       display: block;
       margin-right: 20px;
-      margin-bottom: 40px;
       width: 44px;
       height: 44px;
     }
   
     .nav {
+      z-index: 99;
       width: 250px;
       position: absolute;
       transform: translate(-300px, 0);
-      background-color: transparent;
+      background-color: #D14D72;
+      text-align: left;
+
+      transition: transform 0.3s ease;
+    }
+
+    .nav_list {
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+      gap: 0;
     }
   
     .open {
@@ -75,7 +85,10 @@ body {
       width: auto;
       transform: none;
     }
-  
+    
+    .nav_list {
+      flex-direction: row;
+    }
     .nav_item {
       display: inline-block;
       border-bottom: none;

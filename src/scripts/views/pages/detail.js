@@ -54,7 +54,7 @@ const Detail = {
     const detailContainer = document.querySelector('#restaurant-detail');
     detailContainer.innerHTML = `
       <h2 class="restaurant-name">${restaurant.name}</h2>
-      <img class="restaurant-image" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
+      <img class="lazyload" id="restaurant-image" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
       <div class="restaurant-info">
         <p class="restaurant-city">🏙️ ${restaurant.city}</p>
         <p class="restaurant-address">🏠 ${restaurant.address}</p>

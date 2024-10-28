@@ -3,8 +3,8 @@ import CONFIG from "../../globals/config";
 const createRestoItemTemplate = (resto) => `
 <div class="resto-item">
     <div class="resto-item_header">
-    <img class="resto-item_header_poster" alt="${resto.name}"
-        src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL + resto.pictureId : 'https://restaurant-api.dicoding.dev/images/small/${resto.pictureId}'}">
+    <img class="lazyload" id="resto-item_header_poster" alt="${resto.name}"
+        data-src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL + resto.pictureId : 'https://restaurant-api.dicoding.dev/images/small/${resto.pictureId}'}">
     </div>
     <div class="resto-item_name">
         <h2><a href="/#/detail/${resto.id}">${resto.name}</a></h2>
