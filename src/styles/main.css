@@ -209,6 +209,7 @@ body {
 }
 
 .resto-item_city {
+  min-height: 44px;
   font-size: 20px;
   margin-left: 20px;
   color:  #D14D72;
@@ -269,6 +270,7 @@ body {
 .restaurant-description h3,
 .restaurant-menus h3,
 .restaurant-reviews h3 {
+  min-height: 44px;
   font-size: 1.8em;
   color: #D14D72;
   margin-bottom: 10px;
@@ -449,6 +451,7 @@ body {
 
 #searchInput {
   width: 300px;
+  min-height: 44px;
   padding: 10px;
   font-size: 16px;
   border: 2px solid #D14D72;
@@ -456,6 +459,7 @@ body {
 }
 
 #searchButton {
+  min-height: 44px;
   padding: 10px 20px;
   font-size: 16px;
   background-color: #D14D72;
@@ -484,6 +488,7 @@ body {
 }
 
 .review-form-container h3 {
+  min-height: 44px;
   font-size: 1.5rem;
   color: #D14D72;
   margin-bottom: 1rem;
@@ -496,6 +501,7 @@ body {
 
 #reviewForm input,
 #reviewForm textarea {
+  min-height: 44px;
   margin-bottom: 1rem;
   padding: 0.5rem;
   border: 1px solid #ccc;
