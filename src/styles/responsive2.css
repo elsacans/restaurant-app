@@ -36,12 +36,13 @@ body {
     }
   
     .nav {
+      top: 0;
       z-index: 99;
+      width: 250px;
+      position: absolute;
       transform: translateX(-100%);
-      transform: translate(-300px, 0);
       background-color: #D14D72;
       text-align: left;
-
       transition: transform 0.3s ease;
     }
 
@@ -53,7 +54,7 @@ body {
     }
   
     .open {
-      transform: translate(0, 0);
+      transform: translateX(0);
     }
 
     .headline_title {
@@ -81,7 +82,7 @@ body {
   
     .nav {
       position: static;
-      width: auto;
+      width: 100%;
       transform: none;
     }
     

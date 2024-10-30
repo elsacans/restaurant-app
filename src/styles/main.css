@@ -77,29 +77,38 @@ body {
 .nav {
   width: 100%;
   text-align: right;
-  padding: 20px;
 }
 
 .nav_list {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   width: 100%;
-  padding-left: 0;
-  gap: 3rem;
+  padding: 0;
+  margin: 0;
+
 }
 
 .nav_item {
   box-sizing: border-box;
-  display: inline-block;
   text-align: right;
+  padding: 0.5em;
+  margin: 0;
+  list-style: none;
+  font-size: 1em;
+  color: #fff;
+  background-color: #D14D72;
+  border: none;
+  cursor: pointer;
   text-transform: uppercase;
 }
 
 .nav a {
   display: inline-block;
+  text-align: right;
   text-decoration: none;
   border-radius: 99px;
   padding: 16px;
-  margin-right: 10px;
   margin-top: 10px;
   font-size: 1em;
   font-weight: 400;
