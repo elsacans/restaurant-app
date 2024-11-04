@@ -17,6 +17,7 @@ const assetsToCache = [
   './app.bundle.js',
   './app.webmanifest',
   './sw.bundle.js',
+  'https://use.fontawesome.com/b070c8f1df.js',
 ];
 
 self.addEventListener('install', (event) => {

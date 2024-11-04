@@ -138,6 +138,8 @@ const Detail = {
         console.error('Error posting review:', error);
         alert('Failed to add review. Please check your connection and try again.');
       }
+
+      this._initReviewForm(restaurantId);
     });
   },
 
